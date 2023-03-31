@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1365</width>
+    <height>84</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="VideoPlayer" name="videoplayer">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>100</y>
+     <width>150</width>
+     <height>46</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="FileDialog" name="filedialog">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>150</width>
+     <height>46</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Open Movie</string>
+   </property>
+   <property name="filter">
+    <string>Movie Files (*.avi)</string>
+   </property>
+  </widget>
+  <widget class="IntSliderUI" name="intsliderui">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>50</y>
+     <width>1361</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>0</y>
+     <width>1311</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="_horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="text">
+       <string>open</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>play</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="text">
+       <string>pause</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>stop</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="text">
+       <string>prev</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>next</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="FlonumUI" name="flonumui">
+   <property name="geometry">
+    <rect>
+     <x>1310</x>
+     <y>10</y>
+     <width>50</width>
+     <height>46</height>
+    </rect>
+   </property>
+   <property name="value">
+    <double>1.000000000000000</double>
+   </property>
+   <property name="minimum">
+    <double>-10.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>10.000000000000000</double>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FileDialog</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.files.FileDialog</header>
+  </customwidget>
+  <customwidget>
+   <class>FlonumUI</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.ui.FlonumUI</header>
+  </customwidget>
+  <customwidget>
+   <class>IntSliderUI</class>
+   <extends>QSlider</extends>
+   <header>SmartFramework.ui.IntSliderUI</header>
+  </customwidget>
+  <customwidget>
+   <class>VideoPlayer</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.video.VideoPlayer</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>videoplayer</receiver>
+   <slot>stop()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>370</x>
+     <y>8</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>videoplayer</receiver>
+   <slot>next()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>430</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>355</x>
+     <y>52</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>filedialog</receiver>
+   <slot>open()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>7</x>
+     <y>15</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>13</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>filedialog</sender>
+   <signal>outputFileName(QString)</signal>
+   <receiver>lineEdit</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>49</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>111</x>
+     <y>19</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>filedialog</sender>
+   <signal>selectPath(QString)</signal>
+   <receiver>videoplayer</receiver>
+   <slot>setPath(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>56</x>
+     <y>44</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>videoplayer</sender>
+   <signal>outImage(PyQt_PyObject)</signal>
+   <receiver>Form</receiver>
+   <slot>outImage(PyQt_PyObject)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>328</x>
+     <y>43</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>videoplayer</receiver>
+   <slot>prev()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>400</x>
+     <y>7</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>349</x>
+     <y>47</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>flonumui</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>videoplayer</receiver>
+   <slot>setSpeed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>462</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>352</x>
+     <y>73</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>videoplayer</sender>
+   <signal>outFrameCountLessOne(int)</signal>
+   <receiver>intsliderui</receiver>
+   <slot>setMaximum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>videoplayer</sender>
+   <signal>outFrameNumber(int)</signal>
+   <receiver>intsliderui</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>344</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>39</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>intsliderui</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>videoplayer</receiver>
+   <slot>inFrameNumber(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>284</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>70</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>videoplayer</receiver>
+   <slot>play()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>292</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>videoplayer</receiver>
+   <slot>pause()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>outImage(PyQt_PyObject)</slot>
+ </slots>
+</ui>

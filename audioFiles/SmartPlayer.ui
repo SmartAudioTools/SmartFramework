@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>912</width>
+    <height>762</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="_gridLayout" rowstretch="0,2,0,0,0">
+   <property name="leftMargin">
+    <number>10</number>
+   </property>
+   <property name="topMargin">
+    <number>10</number>
+   </property>
+   <property name="rightMargin">
+    <number>10</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <item row="3" column="3">
+    <widget class="ControlUI" name="_rating">
+     <property name="maximum">
+      <double>5.000000000000000</double>
+     </property>
+     <property name="prefix">
+      <string/>
+     </property>
+     <item>
+      <property name="text">
+       <string>★☆☆☆☆</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>★★☆☆☆</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>★★★☆☆</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>★★★★☆</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>★★★★★</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="ControlUI" name="_dance">
+     <property name="text">
+      <string>Dance</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="ControlUI" name="_prev">
+     <property name="text">
+      <string>◄◄</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="ControlUI" name="_play">
+     <property name="text">
+      <string>►</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <widget class="AudioDeviceMenuUI" name="audiodevicemenuui">
+     <property name="prefix">
+      <string>Device :</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="ControlUI" name="_next">
+     <property name="text">
+      <string>►►</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="5">
+    <widget class="FileDialogUI" name="filedialogui">
+     <property name="ext">
+      <string>*.flac,*.mp3,*.wav,*.ogg,*.wma</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="5">
+    <widget class="ControlUI" name="_position">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="decimals">
+      <number>1</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" colspan="2">
+    <widget class="ControlUI" name="buffersize">
+     <property name="maximum">
+      <double>7.000000000000000</double>
+     </property>
+     <property name="prefix">
+      <string>Buffer size :</string>
+     </property>
+     <property name="itemsDictStr">
+      <string>{&quot;16&quot;:16,&quot;32&quot;:32,&quot;64&quot;:64,&quot;128&quot;:128,&quot;256&quot;:256,&quot;512&quot;:512,&quot;1024&quot;:1024,&quot;2048&quot;:2048}</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="value">
+      <double>2.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="5">
+    <widget class="QWidget" name="widget" native="true">
+     <widget class="SerializeInterface" name="serializeinterface">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>170</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="target" stdset="0">
+       <string>self.parent().parent()</string>
+      </property>
+     </widget>
+     <widget class="Thread" name="thread">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>441</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <widget class="AudioFilePlayer" name="_audiofileplayer">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>160</width>
+         <height>35</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Thread</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.Thread</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AudioDeviceMenuUI</class>
+   <extends>ControlUI</extends>
+   <header>SmartFramework.audio.AudioDeviceMenuUI</header>
+  </customwidget>
+  <customwidget>
+   <class>FileDialogUI</class>
+   <extends>QTreeView</extends>
+   <header>SmartFramework.files.FileDialogUI</header>
+  </customwidget>
+  <customwidget>
+   <class>SerializeInterface</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.serialize.SerializeInterface</header>
+  </customwidget>
+  <customwidget>
+   <class>ControlUI</class>
+   <extends>QComboBox</extends>
+   <header>SmartFramework.ui.ControlUI</header>
+  </customwidget>
+  <customwidget>
+   <class>AudioFilePlayer</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.audioFiles.AudioFilePlayer</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>filedialogui</sender>
+   <signal>currentPath(QString)</signal>
+   <receiver>_audiofileplayer</receiver>
+   <slot>setPathAndPlay(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>156</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>979</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_play</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>_audiofileplayer</receiver>
+   <slot>play(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>333</x>
+     <y>932</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>979</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_next</sender>
+   <signal>pressed()</signal>
+   <receiver>filedialogui</receiver>
+   <slot>selectNext()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>497</x>
+     <y>932</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>273</x>
+     <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_prev</sender>
+   <signal>pressed()</signal>
+   <receiver>filedialogui</receiver>
+   <slot>selectPrev()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>138</x>
+     <y>932</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_audiofileplayer</sender>
+   <signal>soundLenght(double)</signal>
+   <receiver>_position</receiver>
+   <slot>setMaximum(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>979</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>885</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_audiofileplayer</sender>
+   <signal>position(double)</signal>
+   <receiver>_position</receiver>
+   <slot>setValueWithoutEmit(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>979</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>885</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_position</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>_audiofileplayer</receiver>
+   <slot>setPosition(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>885</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>979</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_audiofileplayer</sender>
+   <signal>playing(bool)</signal>
+   <receiver>_play</receiver>
+   <slot>setValueWithoutEmit(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>979</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>333</x>
+     <y>932</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>audiodevicemenuui</sender>
+   <signal>valueChanged(QString)</signal>
+   <receiver>_audiofileplayer</receiver>
+   <slot>setDevice(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>131</x>
+     <y>31</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>979</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buffersize</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>_audiofileplayer</receiver>
+   <slot>setBufferSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>591</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>979</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

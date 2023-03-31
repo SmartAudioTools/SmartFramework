@@ -1,0 +1,6 @@
+﻿obj.audiodevicemenuui.setValue('default')
+obj.audiodevicemenuui.setLastAudioDevices(['HDA Intel PCH: ALC269VB Analog (hw:0,0)', 'HDA Intel PCH: HDMI 0 (hw:0,3)', 'HDA Intel PCH: HDMI 1 (hw:0,7)', 'HDA Intel PCH: HDMI 2 (hw:0,8)', 'HDA Intel PCH: HDMI 3 (hw:0,9)', 'front', 'surround40', 'surround51', 'surround71', 'hdmi', 'pulse', 'dmix', 'default'])
+obj.buffersize.setValue('128')
+obj.filedialogui.exts = ['flac', 'mp3', 'wav', 'ogg', 'wma']
+obj.filedialogui.setPath('//run/media/smartaudiotools/DATA/Documents/Music/★★★/ROCK/Inüit/Inüit - Comment On Fait Le Feu _.flac')
+obj.filedialogui.setRootPath('/run/media/smartaudiotools/DATA/Documents/Music')

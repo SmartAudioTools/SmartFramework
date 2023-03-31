@@ -1,0 +1,7 @@
+﻿{
+	"process_to_suspend"     : ["Dropbox.exe","TortoiseHgOverlayServer.exe"],
+	"process_to_kill"        : [],
+	"devices_to_desactive"   : ["Realtek RTL8723BS Wireless LAN 802.11n SDIO Network Adapter","DM9621A USB To Fast Ethernet Adapter(KMDF)"],
+	"power_profile"		 : "SmartFace",
+	"garbage_collector"      : false 
+}

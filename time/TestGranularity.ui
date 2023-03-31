@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>451</width>
+    <height>43</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QtTimer" name="qttimer">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>40</y>
+     <width>150</width>
+     <height>46</height>
+    </rect>
+   </property>
+   <property name="interval">
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="TimeMonitorUI" name="timemonitorui">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>451</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QtTimer</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.time.QtTimer</header>
+  </customwidget>
+  <customwidget>
+   <class>TimeMonitorUI</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.time.TimeMonitorUI</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>qttimer</sender>
+   <signal>output()</signal>
+   <receiver>timemonitorui</receiver>
+   <slot>inTick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>18</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>59</x>
+     <y>27</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

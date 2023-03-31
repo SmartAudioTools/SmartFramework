@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="Webcam" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>394</width>
+    <height>190</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="_verticalLayout" stretch="1,2">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="WebcamMenuUI" name="_webcamMenu"/>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="_gridLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="ControlUI" name="_resolutionMenu">
+        <property name="sendInitValue">
+         <bool>false</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>VGA</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>QVGA</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="ControlUI" name="_modeMenu">
+        <property name="sendInitValue">
+         <bool>false</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>BAYER</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>MONO</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>COLOR</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="ControlUI" name="_ledButton">
+        <property name="text">
+         <string>Leds</string>
+        </property>
+        <property name="sendInitValue">
+         <bool>false</bool>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="ControlUI" name="_fpsNumberUI">
+        <property name="minimum">
+         <double>0.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>200.000000000000000</double>
+        </property>
+        <property name="prefix">
+         <string>Fps </string>
+        </property>
+        <property name="singleStep">
+         <double>5.000000000000000</double>
+        </property>
+        <property name="sendInitValue">
+         <bool>false</bool>
+        </property>
+        <property name="syncSave">
+         <bool>false</bool>
+        </property>
+        <property name="value">
+         <double>0.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="ControlUI" name="_gainNumberUI">
+        <property name="maximum">
+         <double>512.000000000000000</double>
+        </property>
+        <property name="prefix">
+         <string>Gain </string>
+        </property>
+        <property name="sendInitValue">
+         <bool>false</bool>
+        </property>
+        <property name="syncSave">
+         <bool>false</bool>
+        </property>
+        <property name="value">
+         <double>0.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="ControlUI" name="_exposureNumberUI">
+        <property name="maximum">
+         <double>512.000000000000000</double>
+        </property>
+        <property name="prefix">
+         <string>Expo </string>
+        </property>
+        <property name="sendInitValue">
+         <bool>false</bool>
+        </property>
+        <property name="mouseSensibility">
+         <double>0.500000000000000</double>
+        </property>
+        <property name="syncSave">
+         <bool>false</bool>
+        </property>
+        <property name="value">
+         <double>0.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ControlUI</class>
+   <extends>QComboBox</extends>
+   <header>SmartFramework.ui.ControlUI</header>
+  </customwidget>
+  <customwidget>
+   <class>WebcamMenuUI</class>
+   <extends>ControlUI</extends>
+   <header>SmartFramework.video.WebcamMenuUI</header>
+  </customwidget>
+  <customwidget>
+   <class>Webcam</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.video.Webcam</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>_webcamMenu</sender>
+   <signal>valueChanged(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>setDevice(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>221</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>382</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_resolutionMenu</sender>
+   <signal>valueChanged(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>setResolution(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>23</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>382</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_modeMenu</sender>
+   <signal>textActivated(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>setMode(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>376</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_ledButton</sender>
+   <signal>valueChanged(bool)</signal>
+   <receiver>Form</receiver>
+   <slot>setLed(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>538</x>
+     <y>285</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>382</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Form</sender>
+   <signal>outDevice(QString)</signal>
+   <receiver>_webcamMenu</receiver>
+   <slot>setValueWithoutEmit(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>64</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>221</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Form</sender>
+   <signal>outMode(QString)</signal>
+   <receiver>_modeMenu</receiver>
+   <slot>setValueWithoutEmit(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>4</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>279</x>
+     <y>278</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Form</sender>
+   <signal>outResolution(QString)</signal>
+   <receiver>_resolutionMenu</receiver>
+   <slot>setValueWithoutEmit(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>4</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>55</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Form</sender>
+   <signal>outLed(bool)</signal>
+   <receiver>_ledButton</receiver>
+   <slot>setValueWithoutEmit(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>538</x>
+     <y>285</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_gainNumberUI</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>setGain(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>290</x>
+     <y>513</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_exposureNumberUI</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>setExposure(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>538</x>
+     <y>529</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>304</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>_fpsNumberUI</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>setFps(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>139</x>
+     <y>513</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Form</sender>
+   <signal>outGain(int)</signal>
+   <receiver>_gainNumberUI</receiver>
+   <slot>setValueWithoutEmit(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>2</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>290</x>
+     <y>513</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Form</sender>
+   <signal>outExposure(int)</signal>
+   <receiver>_exposureNumberUI</receiver>
+   <slot>setValueWithoutEmit(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>5</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>538</x>
+     <y>529</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Form</sender>
+   <signal>outFps(int)</signal>
+   <receiver>_fpsNumberUI</receiver>
+   <slot>setValueWithoutEmit(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>139</x>
+     <y>513</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Form</sender>
+   <signal>outEnableSettings(bool)</signal>
+   <receiver>widget</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>79</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>229</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

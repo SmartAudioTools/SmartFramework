@@ -1,0 +1,7 @@
+﻿{
+	"process_to_suspend"     : ["Dropbox.exe"],
+	"process_to_kill"        : ["SoulseekQt.exe","uTorrent.exe","firefox.exe","hg.exe","Resilio Sync.exe"],
+	"devices_to_desactive"   : ["Carte réseau Broadcom 802.11n","Carte réseau Broadcom 802.11n #3","Broadcom NetXtreme Gigabit Ethernet"],
+	"power_profile"		 : "Performances élevées",
+	"garbage_collector"      : false
+}

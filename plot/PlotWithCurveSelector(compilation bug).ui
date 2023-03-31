@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1223</width>
+    <height>906</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="PlotUI" name="plotui"/>
+     <widget class="CurveSelectorUI" name="curveselectorui">
+      <column>
+       <property name="text">
+        <string notr="true">1</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CurveSelectorUI</class>
+   <extends>QTreeWidget</extends>
+   <header>SmartFramework.plot.CurveSelectorUI</header>
+  </customwidget>
+  <customwidget>
+   <class>PlotUI</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.plot.PlotUI</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>plotui</sender>
+   <signal>outNewCurve(PyQt_PyObject)</signal>
+   <receiver>curveselectorui</receiver>
+   <slot>addCurve(PyQt_PyObject)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>559</x>
+     <y>261</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>693</x>
+     <y>256</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Form</sender>
+   <signal>inPlot(PyQt_PyObject)</signal>
+   <receiver>plotui</receiver>
+   <slot>addCurve(PyQt_PyObject)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>296</x>
+     <y>5</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>295</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>inPlot(PyQt_PyObject)</signal>
+ </slots>
+</ui>

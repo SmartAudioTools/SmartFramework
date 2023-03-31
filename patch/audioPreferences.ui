@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>222</width>
+    <height>125</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>221</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>GroupBox</string>
+   </property>
+   <widget class="Save" name="save_3">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>80</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="saveName">
+     <string>val3</string>
+    </property>
+    <property name="collName">
+     <string>audioParameters</string>
+    </property>
+   </widget>
+   <widget class="NumberUI" name="numberui">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>50</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="NumberUI" name="numberui_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>50</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="Save" name="save_2">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>50</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="saveName">
+     <string>val2</string>
+    </property>
+    <property name="collName">
+     <string>audioParameters</string>
+    </property>
+   </widget>
+   <widget class="Save" name="save">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>20</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="saveName">
+     <string>val1</string>
+    </property>
+    <property name="collName">
+     <string>audioParameters</string>
+    </property>
+   </widget>
+   <widget class="NumberUI" name="numberui_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>50</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CollInterface" name="collinterface">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>20</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="collName">
+     <string>audioParameters</string>
+    </property>
+    <property name="fileName">
+     <string>audioParameters</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CollInterface</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.save.collInterface</header>
+  </customwidget>
+  <customwidget>
+   <class>NumberUI</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.ui.numberUI</header>
+  </customwidget>
+  <customwidget>
+   <class>Save</class>
+   <extends>QWidget</extends>
+   <header>SmartFramework.save.save</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>save</sender>
+   <signal>output(int)</signal>
+   <receiver>numberui</receiver>
+   <slot>input(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>228</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>115</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>numberui</sender>
+   <signal>output(int)</signal>
+   <receiver>save</receiver>
+   <slot>input(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>61</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>225</x>
+     <y>52</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>numberui_2</sender>
+   <signal>output(int)</signal>
+   <receiver>save_2</receiver>
+   <slot>input(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>191</x>
+     <y>80</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>save_2</sender>
+   <signal>output(int)</signal>
+   <receiver>numberui_2</receiver>
+   <slot>input(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>numberui_3</sender>
+   <signal>output(int)</signal>
+   <receiver>save_3</receiver>
+   <slot>input(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>save_3</sender>
+   <signal>output(int)</signal>
+   <receiver>numberui_3</receiver>
+   <slot>input(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>229</x>
+     <y>129</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>121</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Form</sender>
+   <signal>input(QString)</signal>
+   <receiver>collinterface</receiver>
+   <slot>saveAndLoad(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>251</x>
+     <y>8</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>input(QString)</signal>
+ </slots>
+</ui>
